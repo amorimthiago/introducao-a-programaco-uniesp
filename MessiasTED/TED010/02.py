@@ -1,8 +1,26 @@
 #Faça um algoritmo para ler 50 números e armazenar em um vetor VET, verificar e escrever se existem números repetidos no vetor VET e em que posições se encontram.
 
+import random
 
-VET=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,4,19,20,21,22,23,24,25,26,27,28,29,30,6,32,33,34,35,36,37,38,39,40,41,42,43,44,45,2,47,48,49,50]
-for num in VET:
-  if VET.count(num)>1:
-    print(f'O número {num} se repete {VET.count(num)} vezes nas posições {VET.index(2)}, {VET.index(2,2)}, {VET.index(2,23)}, {VET.index(2,33)}')
-    break
+# Criando uma variável no contexto do programa
+vet = []
+
+
+# Estrutura de repetição para criar 50 números randomicos
+for x in range(50):
+    
+    vet.append(random.randint(0, 100))
+
+# Imprimindo o vetor para teste
+print(f'O vetor criado foi: {vet}')
+
+
+# Verificar se há número repetidos
+for i in range(0, len(vet)):
+    
+    print(f'VALOR TESTADO: {vet[i]} | ÍNDICE TESTADO: {i}')
+    
+    for j in range(0, len(vet)):
+        
+        if vet[i] == vet[j] and i != j:
+            print(f'Índice: {j} | Valor: {vet[j]} \n')
